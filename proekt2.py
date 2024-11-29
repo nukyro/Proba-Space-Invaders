@@ -201,10 +201,10 @@ def main():
 
     def redraw_window():
         SCREEN.blit(BACKGROUND, (0, 0))
-        level_label = font.render(f'Ð£Ñ€Ð¾Ð²ÐµÐ½ÑŒ: {level}', 1, (255, 255, 255))
-        lives_label = font.render(f'Ð–Ð¸Ð·Ð½Ð¸: {lives}', 1, (255, 255, 255))
-        score_label = font.render(f'Ð¡Ñ‡ÐµÑ‚: {score}', 1, (255, 255, 255))
-        highscore_label = font.render(f'Ð›ÑƒÑ‡ÑˆÐ¸Ð¹ ÑÑ‡ÐµÑ‚: {highscore}', 1, (255, 255, 255))
+        level_label = font.render(f'Уровень: {level}', 1, (255, 255, 255))
+        lives_label = font.render(f'Жизни: {lives}', 1, (255, 255, 255))
+        score_label = font.render(f'Счет: {score}', 1, (255, 255, 255))
+        highscore_label = font.render(f'Лучший счет: {highscore}', 1, (255, 255, 255))
         SCREEN.blit(lives_label, (10, 10))
         SCREEN.blit(level_label, (980, 10))
         SCREEN.blit(score_label, (10, 65))
@@ -216,7 +216,7 @@ def main():
         player.draw(SCREEN)
 
         if lost:
-            lost_label = font.render(f'Ð’Ñ‹ Ð¿Ñ€Ð¾Ð¸Ð³Ñ€Ð°Ð»Ð¸! Ð’Ð°Ñˆ ÑÑ‡ÐµÑ‚: {score}', 1, (255, 255, 255))
+            lost_label = font.render(f'Вы проиграли! Ваш счет: {score}', 1, (255, 255, 255))
             SCREEN.blit(lost_label, ((WIDTH - lost_label.get_width()) // 2, (HEIGHT - lost_label.get_height()) // 2))
 
         pygame.display.update()
@@ -286,7 +286,7 @@ def main():
 def main_menu():
     run = True
     while run:
-        title_label = font.render('ÐÐ°Ð¶Ð¼Ð¸Ñ‚Ðµ, Ñ‡Ñ‚Ð¾Ð±Ñ‹ Ð¿Ñ€Ð¾Ð´Ð¾Ð»Ð¶Ð¸Ñ‚ÑŒ...', 1, (255, 255, 255))
+        title_label = font.render('Нажмите, чтобы продолжить...', 1, (255, 255, 255))
         SCREEN.blit(BACKGROUND, (0, 0))
         SCREEN.blit(title_label, ((WIDTH - title_label.get_width()) // 2, (HEIGHT - title_label.get_height()) // 2))
         pygame.display.update()
@@ -301,4 +301,3 @@ def main_menu():
 if __name__ == "__main__":
     main_menu()
     conn.close()
-
